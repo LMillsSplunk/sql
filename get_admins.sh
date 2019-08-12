@@ -5,7 +5,7 @@ do	QUERY="select e.email as 'Email' from UserEmails e join OrganizationMemberRol
 	echo $'-----------------------------------------------------------\n'
 	printf "Admin emails for slug: %s" "$arg"
 	echo $'\n-----------------------------------------------------------'
-	mysql -h coredb1.pr.den02.victorops.net -D vo_hier -u rouser -p -e "$QUERY" | while read Email ; do
+	mysql -h aurora-ro -D vo_hier -u rouser -p -e "$QUERY" | while read Email ; do
 	echo "$Email"
 	done
 	echo $'\n\n'
